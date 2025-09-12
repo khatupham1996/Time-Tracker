@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0e1323;
+  font-family: "Rubik", sans-serif;
+}
+.work-bg {
+  background: linear-gradient(135deg, #ff8c66, #ff6e4d);
+}
+.play-bg {
+  background: linear-gradient(135deg, #56c2e6, #3ea5c7);
+}
+.study-bg {
+  background: linear-gradient(135deg, #ff5c7c, #be3654);
+}
+.exercise-bg {
+  background: linear-gradient(135deg, #4acf81, #37a86b);
+}
+.social-bg {
+  background: linear-gradient(135deg, #7536d3, #6c2dd1);
+}
+.self-care-bg {
+  background: linear-gradient(135deg, #f1c65b, #e6b047);
+}
+
+.tracker-card {
+  width: 100%;
+  max-width: 116rem;
+  /* margin: 0 auto; */
+  display: flex;
+}
+.tracker-left {
+  width: 25.5rem;
+  max-height: 52rem;
+  background: #1c204b;
+  margin-right: 32px;
+}
+.tracker-author {
+  width: 25.5rem;
+  max-width: 100%;
+  height: 35.4rem;
+  background: #5747ea;
+  padding: 3.2rem;
+}
+
+.tracker-image__thumb {
+  width: 7.8rem;
+  height: 7.8rem;
+  object-fit: coverx;
+}
+.tracker-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #bbc0ff;
+}
+.tracker-info {
+  margin-top: 4rem;
+}
+.tracker-name {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 4rem;
+  line-height: 4.7rem;
+  color: #ffffff;
+}
+.tracker-active {
+  padding: 3.2rem;
+}
+a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #7078c9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.tracker-active__link--act {
+  color: #ffffff;
+}
+.tracker-active a:hover,
+.tracker-active__link--act {
+  color: #ffffff !important;
+}
+.tracker-right {
+  max-width: 100%; /* Important for flex item overflow */
+}
+.activity-card {
+  height: 24.4rem;
+  width: 25.5rem;
+  overflow: hidden;
+  border-radius: 1.6rem;
+  margin-bottom: 3.2rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.activity-card:hover {
+  transform: translateY(-5px);
+}
+.activity-bg {
+  height: 7.8rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+.activity-bg::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  right: 2rem;
+  width: 7.8rem;
+  height: 7.8rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.activity-content {
+  top: 5.5rem;
+  padding: 3.2rem;
+  background: #1c204b;
+  width: 25.5rem;
+  height: 20rem;
+}
+.activity-time {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 5.6rem;
+  line-height: 6.6rem;
+  color: #ffffff;
+}
+.activity-previous {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #bbc0ff;
+}
+
+.activity-menu {
+  color: #bbc0ff;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+/* Tablet Styles */
+@media (max-width: 991px) {
+  .tracker-card {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .tracker-left {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tracker-author {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2.4rem;
+  }
+
+  .tracker-info {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
+  .tracker-name {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+  }
+  .tracker-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 3.2rem;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+  }
+
+  .tracker-active__list {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    gap: 2rem !important;
+  }
+
+  .tracker-right {
+    max-width: 100%;
+  }
+  .activity-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .activity-content {
+    width: 100%;
+  }
+  #activity-container .col-4 {
+    flex: 0 0 auto;
+    width: 33.33%;
+    margin-bottom: 2rem;
+  }
+}
+/* Mobile Styles */
+@media (max-width: 576px) {
+  body {
+    align-items: flex-start;
+    padding: 2rem 0;
+  }
+
+  .tracker-card {
+    padding: 0 1.5rem;
+  }
+
+  .tracker-author {
+    padding: 2rem;
+  }
+
+  .tracker-name {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .tracker-active {
+    padding: 2rem;
+  }
+
+  #activity-container .col-4 {
+    width: 100%;
+  }
+
+  .activity-time {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+  }
+}
