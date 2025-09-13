@@ -1,15 +1,22 @@
 let json = [];
 let currentTimeframe = "weekly";
-fetch("./data.json")
+
+const fetchPromise = fetch("./data.json");
+
+fetchPromise
   .then((response) => {
-    if (!response.ok) return console.log("Opps! something went wrong.");
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
     return response.json();
   })
   .then((data) => {
+    console.log(data);
     json = data;
-    console.log(json);
-    // Initial render
     renderActivities(currentTimeframe);
+  })
+  .catch((error) => {
+    console.error(`Could not get products: ${error}`);
   });
 
 // Function to get the background class for each activity
